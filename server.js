@@ -86,7 +86,7 @@ function createTemplate (data){
 return htmlTemplate;
 }
 
-app.get('/', function (req, res) {
+res.status(500).send(err.toString()); {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
