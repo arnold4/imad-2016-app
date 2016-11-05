@@ -20,23 +20,31 @@ var articles= {
           title: 'Article one Arnold Antoo',
           heading: 'Article One',
           date: 'Sep 5, 2016', 
-                    content: <p> This is my First Article.
+                    content: `<p> This is my First Article. This is myFirst ARTICLE
                     </p>
+                    <p> This is my First Article. This is myFirst ARTICLE
+                    </p>
+                    <p> This is my First Article. This is myFirst ARTICLE
+                    </p>`
         },
         'article-two': {
              title: 'Article Two Arnold Antoo',
           heading: 'Article Two',
           date: 'Sep 10, 2016', 
-                    content: <p>This is my Second article . Second Article.
+                    content: `<p> This is my Second Article. This is mySecond ARTICLE
                     </p>
+                    <p> This is my Second Article. This is mySecond ARTICLE
+                    </p>
+                    <p>This is my Second Article. This is mySecond ARTICLE
+                    </p>`
                      
         },
         'article-three': {
             title: 'Article one Arnold Antoo',
             heading: 'Article Three',
             date: 'Sep 5, 2016', 
-                    content:  <p>This is my third article .
-                    </p>
+                    content: ` <p>This is my third article .
+                    </p>`
         }
     };
 function createTemplate (data){
