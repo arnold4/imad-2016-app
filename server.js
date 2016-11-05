@@ -20,27 +20,26 @@ var articles= {
           title: 'Article one Arnold Antoo',
           heading: 'Article One',
           date: 'Sep 5, 2016', 
-                    content: ` <p>This is my first article . mY first article. Myfirst article.
+                    content: <p>This is my first article . mY first article. Myfirst article.
                     </p>
                     <p>This is my first article . mY first article. Myfirst article.
                     </p>
-                    <p>This is my first article . mY first article. Myfirst article.
-                    </p> `
         },
         'article-two': {
              title: 'Article Two Arnold Antoo',
           heading: 'Article Two',
           date: 'Sep 10, 2016', 
-                    content: ` <p>This is my Second article . Second Article.
+                    content: <p>This is my Second article . Second Article.
                     </p>
-                     `
+                     
         },
         'article-three': {
-                        title: 'Article Three Arnold Antoo',
-                        heading: 'Article Three',
-                        date: 'Sep 15, 2016', 
-                        content: ` <p>This is my Third article . Third Article.
-                        </p>
+            title: 'Article one Arnold Antoo',
+            heading: 'Article Three',
+            date: 'Sep 5, 2016', 
+                    content:  <p>This is my first article . mY first article. Myfirst article.
+                    </p>
+                        
 
         }
     };
