@@ -27,7 +27,7 @@ var articles= {
                     <p>This is my first article . mY first article. Myfirst article.
                     </p> `
         },
-        `article-two`: {
+        'article-two': {
              title: 'Article Two Arnold Antoo',
           heading: 'Article Two',
           date: 'Sep 10, 2016', 
@@ -35,7 +35,7 @@ var articles= {
                     </p>
                      `
         },
-        `article-three`: {
+        'article-three': {
                         title: 'Article Three Arnold Antoo',
                         heading: 'Article Three',
                         date: 'Sep 15, 2016', 
