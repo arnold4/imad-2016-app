@@ -37,20 +37,15 @@ var articles= {
             date: 'Sep 5, 2016', 
                     content:  <p>This is my third article .
                     </p>
-                        
-
         }
     };
-
 function createTemplate (data){
             var title=data.title;
             var date=data.date;
             var heading=data.heading;
             var content=data.content;
-            
             var htmlTemplate= `
                        <html>
-                
                 <head>
                     <title>
                         ${title}
