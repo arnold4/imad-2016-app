@@ -20,9 +20,8 @@ var articles= {
           title: 'Article one Arnold Antoo',
           heading: 'Article One',
           date: 'Sep 5, 2016', 
-                    content: <p>This is my First Article
+                    content: <p> This is my First Article.
                     </p>
-                    
         },
         'article-two': {
              title: 'Article Two Arnold Antoo',
