@@ -5,6 +5,7 @@ var Pool = require('pg').Pool;
 var app = express();
 var crypto = require('crypto');
 var bodyParser = require('bodyParser');
+var session = require('express-session');
 
 app.use(morgan('combined'));
 
@@ -18,6 +19,11 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
+    }));
 
 function createTemplate (data){
             var title=data.title;
@@ -108,8 +114,15 @@ app.post('/login', function (req, res) {
              var salt = dbString.split($)[2];
              var hashedPassword = hash(password, salt);    //Creating a hash based on the password submitted and the original salt
              if(hashPassword === dbString) {
+                 
+                 //Set the Session
+                 req.sesiom.auth = {userid: result.rows[0].id};
+                 //set a cookie with a sw=ession id
+                 // interally on the server side it maps the session id toan object
+                 //{auth: {userid }}
+                 
                  res.send('Credentials Correct!');
-             }
+                 }
              else {
                  res.send(403).send('Username/Password is invalid');
              }
@@ -117,6 +130,14 @@ app.post('/login', function (req, res) {
        }
        }
     });
+});
+app.get('/check-login', function(req, res){
+   if(req.session && req.session.auth && req.session.userid){
+       res.send('You are Logged in : '+ req.session.auth.userid.toString());
+   } 
+   else {
+       res.send('You are not Logged in');
+   }
 });
 
 var pool = new Pool(config);
