@@ -12,7 +12,7 @@
               if (request.status === 200) {
                  alert('Logged In Successfully');
               } else if (request.status === 403) {
-                  alert('login successful');
+                  alert('Incorrect username/password');
               } else if (request.status === 500) {
                   alert('Something went wrong on the server');
               } 
