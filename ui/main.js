@@ -1,5 +1,5 @@
     // Submit username/password to login
-    var submit = document.getElementById('login_btn');
+    var submit = document.getElementById('submit_btn');
     submit.onclick = function () {
         // Create a request object
         var request = new XMLHttpRequest();
@@ -29,13 +29,15 @@
         var password = document.getElementById('password').value;
         console.log(username);
         console.log(password);
-        request.open('POST', '/login', true);
+        request.open('POST', 'http://arnold4.imad.hasura-app.io/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = 'Logging in...';
+      //  submit.value = 'Logging in...';
         
     };
-    
+  
+  
+  /*  
     var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
@@ -66,3 +68,5 @@
         register.value = 'Registering...';
     
 };
+
+*/
