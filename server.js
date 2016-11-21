@@ -16,6 +16,7 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -111,12 +112,13 @@ app.post('/login', function (req, res) {
            else{
              //Match the password
              var dbString = result.rows[0].password;
-             var salt = dbString.split($)[2];
+             //var salt = dbString.split($)[2];
+             var salt = dbString.split('$')[2];
              var hashedPassword = hash(password, salt);    //Creating a hash based on the password submitted and the original salt
-             if(hashPassword === dbString) {
+             if(hashedPassword === dbString) {
                  
                  //Set the Session
-                 req.sesiom.auth = {userid: result.rows[0].id};
+                 req.session.auth = {userId: result.rows[0].id};  
                  //set a cookie with a sw=ession id
                  // interally on the server side it maps the session id toan object
                  //{auth: {userid }}
@@ -126,7 +128,6 @@ app.post('/login', function (req, res) {
              else {
                  res.send(403).send('Username/Password is invalid');
              }
-           res.send('User Successfully Created : ' + username);
        }
        }
     });
@@ -177,6 +178,10 @@ pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], f
        }
 });
 
+});
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 app.get('/ui/style.css', function (req, res) {
