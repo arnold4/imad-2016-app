@@ -30,6 +30,3 @@
         request.send(JSON.stringify({username: username, password: password}));  
   
     };
-  
-  
-  
