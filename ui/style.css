@@ -28,14 +28,6 @@ body {
     padding-right: 20px;
 }
 
-html { 
-  background: url(http://cars124.com/wp-content/uploads/47182705-vintage-car-hd-wallpaper-in-hd.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 .comment {
     margin-left: 10px;
     padding-bottom: 10px;
